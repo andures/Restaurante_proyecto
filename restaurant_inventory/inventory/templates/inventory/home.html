@@ -1,0 +1,36 @@
+{% extends 'inventory/base.html' %}
+
+{% block title %}Inicio{% endblock %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/inventory/home.css' %}">
+
+<!-- Sección Principal -->
+<div class="container text-center py-5">
+    <h1 class="display-4 mb-4">Bienvenido a tu Restaurante</h1>
+    <p class="lead mb-5">Administra tu inventario, menú y compras de manera eficiente.</p>
+    
+    <div class="row justify-content-center">
+        <!-- Enlace a Inventario -->
+        <div class="col-md-4 mb-3">
+            <a href="{% url 'list_ingredients' %}" class="btn btn-primary btn-lg w-100">
+                <i class="fas fa-cogs"></i> Inventario
+            </a>
+        </div>
+        <!-- Enlace a Menu Items -->
+        <div class="col-md-4 mb-3">
+            <a href="{% url 'list_products' %}" class="btn btn-secondary btn-lg w-100">
+                <i class="fas fa-utensils"></i> Menú
+            </a>
+        </div>
+        <!-- Enlace a Compras -->
+        <div class="col-md-4 mb-3">
+            <a href="{% url 'list_recipes' %}" class="btn btn-success btn-lg w-100">
+                <i class="fas fa-shopping-cart"></i> Compras
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
